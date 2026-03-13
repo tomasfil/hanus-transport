@@ -1,0 +1,91 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/ui/Container.astro";
+import Button from "@components/ui/Button.astro";
+import { COMPANY, FLEET_STATS } from "@lib/constants";
+
+const breadcrumbs = [
+  { label: "Úvod", href: "/" },
+  { label: "O společnosti" },
+];
+---
+
+<PageLayout
+  title="O společnosti"
+  description="Hanuš Transport s.r.o. — autodoprava od roku 2011. Ze živnosti k firmě, ze Slaného po celou ČR. 6 vozidel, hydraulické plošiny, GPS sledování."
+  breadcrumbs={breadcrumbs}
+>
+  <section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-16 lg:py-20">
+    <Container>
+      <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+        O společnosti
+      </h1>
+    </Container>
+  </section>
+
+  <section class="py-12 lg:py-16">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-navy-900">Kdo jsme</h2>
+        <p class="mt-4 text-navy-700 leading-relaxed">
+          Jsme přepravní společnost sídlící ve Slaném, která začala fungovat na základě OSVČ v&nbsp;roce 2011.
+          Po 6&nbsp;úspěšných letech byla roku 2017 oficiálně založena společnost Hanuš Transport s.r.o.
+        </p>
+
+        <h2 class="mt-12 text-2xl font-bold text-navy-900">Co děláme</h2>
+        <p class="mt-4 text-navy-700 leading-relaxed">
+          Specializujeme se na svižnou a spolehlivou přepravu zboží a stavebnin po celé České republice.
+          Zajišťujeme také svoz použitých elektrických spotřebičů od koncových prodejců, servisů a sběrných dvorů
+          ve Středočeském kraji.
+        </p>
+
+        <h2 class="mt-12 text-2xl font-bold text-navy-900">Naše možnosti</h2>
+        <p class="mt-4 text-navy-700 leading-relaxed">
+          Jsme vybaveni {FLEET_STATS.vehicleCount} vozidly od dodávek po nákladní auta s celkovou hmotností
+          do&nbsp;{FLEET_STATS.maxWeight}&nbsp;tun. Na všech vozidlech jsou hydraulické plošiny s nosností
+          od&nbsp;{FLEET_STATS.hydraulicLiftMin} do&nbsp;{FLEET_STATS.hydraulicLiftMax}&nbsp;kg.
+          Kapacita až {FLEET_STATS.maxPallets} europalet na jízdu.
+        </p>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2">
+          <div class="rounded-2xl bg-orange-50 p-6">
+            <h3 class="font-bold text-navy-900">GPS sledování</h3>
+            <p class="mt-2 text-sm text-navy-600">
+              Díky GPS modulu, kterým jsou vybavena všechna vozidla, vždy přesně víte,
+              kde se vaše zásilka právě nachází.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-orange-50 p-6">
+            <h3 class="font-bold text-navy-900">Pojištění zásilek</h3>
+            <p class="mt-2 text-sm text-navy-600">
+              Každá vaše zásilka je pojištěná od nakládky, přes samotnou přepravu,
+              až po předání na místě určení.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="mt-12 text-2xl font-bold text-navy-900">Časová osa</h2>
+        <div class="mt-6 space-y-6 border-l-2 border-orange-200 pl-6">
+          <div>
+            <div class="text-sm font-semibold text-orange-600">2011</div>
+            <p class="mt-1 text-navy-700">Zahájení podnikání jako OSVČ v oblasti autodopravy</p>
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-orange-600">2017</div>
+            <p class="mt-1 text-navy-700">Založení společnosti Hanuš Transport s.r.o. (IČO: {COMPANY.ico})</p>
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-orange-600">Dnes</div>
+            <p class="mt-1 text-navy-700">{FLEET_STATS.vehicleCount} vozidel, celostátní pokrytí, specializace na stavebiny a svoz elektrospotřebičů</p>
+          </div>
+        </div>
+
+        <div class="mt-12 text-center">
+          <Button href="/cenik/" variant="primary" size="lg">
+            Poptejte přepravu
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </section>
+</PageLayout>

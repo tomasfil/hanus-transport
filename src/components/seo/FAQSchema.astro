@@ -1,0 +1,12 @@
+---
+import SchemaOrg from "./SchemaOrg.astro";
+import { buildFAQPage } from "@lib/schema-org";
+
+interface Props {
+  items: Array<{ question: string; answer: string }>;
+}
+
+const { items } = Astro.props;
+---
+
+{items.length > 0 && <SchemaOrg schema={buildFAQPage(items)} />}

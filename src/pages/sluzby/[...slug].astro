@@ -1,0 +1,36 @@
+---
+import ServiceLayout from "@layouts/ServiceLayout.astro";
+import ServiceSchema from "@components/seo/ServiceSchema.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+  return services.map((service) => ({
+    params: { slug: service.data.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+
+const breadcrumbs = [
+  { label: "Úvod", href: "/" },
+  { label: service.data.title },
+];
+---
+
+<ServiceLayout
+  title={service.data.title}
+  description={service.data.description}
+  headline={service.data.headline}
+  breadcrumbs={breadcrumbs}
+>
+  <ServiceSchema
+    slot="structured-data"
+    serviceName={service.data.title}
+    description={service.data.description}
+    url={`/sluzby/${service.data.slug}/`}
+  />
+  <Content />
+</ServiceLayout>

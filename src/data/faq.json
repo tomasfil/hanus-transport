@@ -1,0 +1,86 @@
+[
+  {
+    "id": "oblast-pusobnosti",
+    "question": "Kde všude přepravujete?",
+    "answer": "Přepravujeme zboží po celé České republice. Naše zázemí je ve Slaném, takže nejrychleji obsluhujeme Středočeský kraj, Prahu a okolí.",
+    "category": "sluzby",
+    "order": 1
+  },
+  {
+    "id": "typy-vozidel",
+    "question": "Jaká vozidla máte k dispozici?",
+    "answer": "Disponujeme 6 vozidly — od dodávek Renault Master a Iveco Daily (3,5–5 tun) po nákladní automobily MAN s celkovou hmotností do 12 tun. Všechna vozidla mají hydraulické plošiny.",
+    "category": "vozovy-park",
+    "order": 2
+  },
+  {
+    "id": "hydraulicka-plosina",
+    "question": "Co je hydraulická plošina a proč je důležitá?",
+    "answer": "Hydraulická plošina je zvedací zařízení na zadní části vozidla. Umožňuje nakládku a vykládku těžkých předmětů bez potřeby jeřábu nebo vysokozdvižného vozíku. Naše plošiny mají nosnost 750 až 1 500 kg.",
+    "category": "vozovy-park",
+    "order": 3
+  },
+  {
+    "id": "cena-prepravy",
+    "question": "Jak se stanovuje cena přepravy?",
+    "answer": "Cena se odvíjí od vzdálenosti, hmotnosti zásilky, potřebného vozidla a dalších faktorů. Každou nabídku připravujeme individuálně. Vyplňte poptávkový formulář nebo nám zavolejte.",
+    "category": "cena",
+    "order": 4
+  },
+  {
+    "id": "pojisteni",
+    "question": "Je zásilka pojištěna?",
+    "answer": "Ano, každá zásilka je pojištěna po celou dobu přepravy — od nakládky přes samotnou přepravu až po předání na místě určení.",
+    "category": "sluzby",
+    "order": 5
+  },
+  {
+    "id": "gps-sledovani",
+    "question": "Mohu sledovat svou zásilku?",
+    "answer": "Všechna naše vozidla jsou vybavena GPS modulem. Díky tomu vždy přesně víme, kde se vaše zásilka nachází, a můžeme vám poskytnout aktuální informace.",
+    "category": "sluzby",
+    "order": 6
+  },
+  {
+    "id": "svoz-elektro",
+    "question": "Jak funguje svoz elektrospotřebičů?",
+    "answer": "Svoz elektrospotřebičů realizujeme ve Středočeském kraji. Je určen pro prodejny, servisní střediska a sběrné dvory. Jezdíme v pravidelných trasách.",
+    "category": "sluzby",
+    "order": 7
+  },
+  {
+    "id": "jak-objednat",
+    "question": "Jak si objednám přepravu?",
+    "answer": "Nejrychlejší způsob je vyplnit poptávkový formulář na stránce Ceník nebo zavolat na +420 725 961 978 (Martin Hanuš). Stačí nám říct, co, odkud, kam a kdy.",
+    "category": "objednavka",
+    "order": 8
+  },
+  {
+    "id": "palety",
+    "question": "Kolik palet se vejde na vaše vozidla?",
+    "answer": "Kapacita závisí na vozidle: dodávky pojmou 8–9 europalet, nákladní vozy MAN 16–18 europalet.",
+    "category": "vozovy-park",
+    "order": 9
+  },
+  {
+    "id": "ico-firma",
+    "question": "Jaké jsou identifikační údaje firmy?",
+    "answer": "Hanuš Transport s.r.o., IČO: 06340199, DIČ: CZ06340199. Sídlo: Na Folimance 2155/15, Vinohrady, 120 00 Praha.",
+    "category": "firma",
+    "order": 10
+  },
+  {
+    "id": "nakladka-vykladka",
+    "question": "Pomůžete s nakládkou a vykládkou?",
+    "answer": "Ano, řidiči jsou vybaveni paletovými vozíky a rudlíky. Hydraulická plošina umožňuje bezpečnou manipulaci s těžkými zásilkami.",
+    "category": "sluzby",
+    "order": 11
+  },
+  {
+    "id": "doba-dodani",
+    "question": "Jak rychle doručíte zásilku?",
+    "answer": "Standardní přeprava je realizována do 2–5 pracovních dní. Expresní přepravu do 24 hodin zajistíme dle dostupnosti vozidel.",
+    "category": "objednavka",
+    "order": 12
+  }
+]

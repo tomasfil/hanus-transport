@@ -1,0 +1,60 @@
+---
+import Container from "@components/ui/Container.astro";
+import Button from "@components/ui/Button.astro";
+import { FLEET_STATS } from "@lib/constants";
+---
+
+<section class="relative py-20 lg:py-28">
+  <div class="absolute inset-0">
+    <img
+      src="/images/fleet/flotila.webp"
+      alt="Flotila vozidel Hanuš Transport"
+      class="size-full object-cover"
+      fetchpriority="high"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/90 to-navy-900/80"></div>
+  </div>
+  <Container>
+    <div class="relative max-w-3xl">
+      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        Autodoprava
+        <span class="text-orange-400">po celé ČR</span>
+      </h1>
+      <p class="mt-6 text-lg text-navy-200 leading-relaxed sm:text-xl max-w-2xl">
+        Spolehlivá přeprava zboží, stavebnin a&nbsp;palet vozidly do&nbsp;{FLEET_STATS.maxWeight}&nbsp;tun.
+        Všechna vozidla s&nbsp;hydraulickými plošinami. Působíme ze&nbsp;Slaného od&nbsp;roku 2011.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <Button href="/cenik/" variant="primary" size="lg">
+          Nezávazná poptávka
+        </Button>
+        <Button href="/vozovy-park/" variant="outline" size="lg" class="border-white text-white hover:bg-white/10">
+          Vozový park
+        </Button>
+      </div>
+    </div>
+  </Container>
+
+  <div class="relative mt-16 border-t border-white/10">
+    <Container>
+      <div class="grid grid-cols-2 gap-6 py-8 sm:grid-cols-4">
+        <div class="text-center">
+          <div class="text-2xl font-bold text-orange-400 sm:text-3xl">{FLEET_STATS.vehicleCount}</div>
+          <div class="mt-1 text-sm text-navy-300">vozidel ve flotile</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-orange-400 sm:text-3xl">do {FLEET_STATS.maxWeight} t</div>
+          <div class="mt-1 text-sm text-navy-300">celková hmotnost</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-orange-400 sm:text-3xl">do {FLEET_STATS.maxPallets}</div>
+          <div class="mt-1 text-sm text-navy-300">europalet na jízdu</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-orange-400 sm:text-3xl">15+ let</div>
+          <div class="mt-1 text-sm text-navy-300">v oboru od 2011</div>
+        </div>
+      </div>
+    </Container>
+  </div>
+</section>

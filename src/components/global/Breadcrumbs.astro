@@ -1,0 +1,30 @@
+---
+interface Props {
+  items: Array<{ label: string; href?: string }>;
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Drobečková navigace" class="bg-gray-50 border-b border-gray-100">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <ol class="flex items-center gap-2 py-3 text-sm text-navy-500 overflow-x-auto">
+      {items.map((item, index) => (
+        <li class="flex items-center gap-2 whitespace-nowrap">
+          {index > 0 && (
+            <svg class="size-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          )}
+          {item.href ? (
+            <a href={item.href} class="hover:text-navy-700 transition-colors">
+              {item.label}
+            </a>
+          ) : (
+            <span class="text-navy-900 font-medium">{item.label}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>

@@ -1,0 +1,56 @@
+---
+import Container from "@components/ui/Container.astro";
+import Card from "@components/ui/Card.astro";
+import SectionHeading from "@components/ui/SectionHeading.astro";
+
+const services = [
+  {
+    title: "Nákladní autodoprava",
+    description: "Přeprava zboží po celé ČR vozidly od 3,5 do 12 tun. GPS sledování, pojištění zásilek.",
+    href: "/sluzby/nakladni-autodoprava/",
+    icon: `<svg class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0H21M3.375 14.25h.344c.726 0 1.403.37 1.794.978l1.978 3.073M20.25 18.75h-2.325a1.456 1.456 0 01-1.212-.652L14.25 14.25H3.375m0 0V3.375c0-.621.504-1.125 1.125-1.125h9.75c.621 0 1.125.504 1.125 1.125v7.5" /></svg>`,
+  },
+  {
+    title: "Přeprava stavebnin",
+    description: "Stavební materiály s hydraulickými plošinami do 1 500 kg. Přímé doručení na stavbu.",
+    href: "/sluzby/preprava-stavebnin/",
+    icon: `<svg class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21" /></svg>`,
+  },
+  {
+    title: "Přeprava palet",
+    description: "Kapacita až 18 europalet na jízdu. Kompletní vybavení — paletové vozíky, upínací popruhy.",
+    href: "/sluzby/preprava-palet/",
+    icon: `<svg class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>`,
+  },
+  {
+    title: "Svoz elektrospotřebičů",
+    description: "Pravidelný svoz použitých spotřebičů od prodejců a sběrných dvorů ve Středočeském kraji.",
+    href: "/sluzby/svoz-elektrospotrebicu/",
+    icon: `<svg class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>`,
+  },
+];
+---
+
+<section class="py-16 lg:py-24">
+  <Container>
+    <SectionHeading subtitle="Specializujeme se na přepravu zboží, stavebnin a palet po celé České republice.">
+      Naše služby
+    </SectionHeading>
+
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {services.map((service) => (
+        <Card href={service.href}>
+          <div class="text-orange-500 mb-4" set:html={service.icon} />
+          <h3 class="text-lg font-bold text-navy-900">{service.title}</h3>
+          <p class="mt-2 text-sm text-navy-600 leading-relaxed">{service.description}</p>
+          <span class="mt-4 inline-flex items-center text-sm font-medium text-orange-600">
+            Zjistit více
+            <svg class="ml-1 size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </span>
+        </Card>
+      ))}
+    </div>
+  </Container>
+</section>

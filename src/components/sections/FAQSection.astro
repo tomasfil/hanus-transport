@@ -1,0 +1,19 @@
+---
+import Accordion from "@components/ui/Accordion.astro";
+
+interface Props {
+  items: Array<{ question: string; answer: string }>;
+  limit?: number;
+}
+
+const { items, limit } = Astro.props;
+const displayItems = limit ? items.slice(0, limit) : items;
+---
+
+<div class="divide-y divide-gray-200 border-t border-gray-200">
+  {displayItems.map((item, index) => (
+    <Accordion question={item.question} open={index === 0}>
+      <p>{item.answer}</p>
+    </Accordion>
+  ))}
+</div>

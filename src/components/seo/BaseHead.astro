@@ -1,0 +1,52 @@
+---
+import { SITE } from "@lib/constants";
+
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  canonicalUrl,
+  noindex = false,
+} = Astro.props;
+
+const isHomepage = Astro.url.pathname === "/";
+const fullTitle = isHomepage ? SITE.name : `${title} | ${SITE.shortName}`;
+const resolvedOgImage = ogImage ?? SITE.ogImage;
+const resolvedCanonical = canonicalUrl ?? `${SITE.url}${Astro.url.pathname}`;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+<link rel="canonical" href={resolvedCanonical} />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<!-- Self-hosted font preload -->
+<link rel="preload" href="/fonts/inter-latin-ext.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+
+<!-- Open Graph -->
+<meta property="og:type" content={isHomepage ? "website" : "article"} />
+<meta property="og:title" content={ogTitle ?? fullTitle} />
+<meta property="og:description" content={ogDescription ?? description} />
+<meta property="og:image" content={`${SITE.url}${resolvedOgImage}`} />
+<meta property="og:url" content={resolvedCanonical} />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:site_name" content={SITE.shortName} />

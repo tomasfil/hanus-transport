@@ -1,0 +1,30 @@
+# Hanuš Transport s.r.o.
+
+> Czech freight transport company based in Slaný, offering road haulage, construction materials transport, pallet delivery, and used electronics collection across the Czech Republic.
+
+Hanuš Transport s.r.o. (IČO: 06340199) operates a fleet of 6 vehicles ranging from 3.5t vans to 12t trucks, all equipped with hydraulic lifts. Founded in 2011, the company specializes in reliable goods transport with GPS tracking and full shipment insurance.
+
+## Main Pages
+
+- [Homepage](https://hanustransport.cz/): Company overview and services
+- [Road Freight](https://hanustransport.cz/sluzby/nakladni-autodoprava/): General freight transport across Czech Republic
+- [Construction Materials](https://hanustransport.cz/sluzby/preprava-stavebnin/): Building materials transport with hydraulic lifts
+- [Pallet Transport](https://hanustransport.cz/sluzby/preprava-palet/): Euro pallet delivery, up to 18 pallets per trip
+- [E-Waste Collection](https://hanustransport.cz/sluzby/svoz-elektrospotrebicu/): Used electronics collection in Central Bohemia
+- [Fleet](https://hanustransport.cz/vozovy-park/): Vehicle specifications and capabilities
+- [Pricing](https://hanustransport.cz/cenik/): Quote request form
+- [Contact](https://hanustransport.cz/kontakt/): Phone, email, company details
+- [About](https://hanustransport.cz/o-nas/): Company history and team
+- [FAQ](https://hanustransport.cz/casto-kladene-dotazy/): Frequently asked questions
+
+## Regional Coverage
+
+- [Slaný](https://hanustransport.cz/autodoprava/slany/): Home base
+- [Kladno](https://hanustransport.cz/autodoprava/kladno/): 15 km from base
+- [Prague](https://hanustransport.cz/autodoprava/praha/): Daily routes
+- [Central Bohemia](https://hanustransport.cz/autodoprava/stredocesky-kraj/): Primary region
+
+## Guides
+
+- [How Transport Pricing Works](https://hanustransport.cz/pruvodce/jak-se-pocita-cena-prepravy/)
+- [How to Prepare a Shipment](https://hanustransport.cz/pruvodce/jak-pripravit-zasilku/)

@@ -1,0 +1,19 @@
+---
+interface Props {
+  href?: string;
+  class?: string;
+}
+
+const { href, class: className = "" } = Astro.props;
+const Tag = href ? "a" : "div";
+---
+
+<Tag
+  class:list={[
+    "block rounded-2xl bg-white p-6 shadow-sm border border-gray-100 transition-shadow hover:shadow-md",
+    className,
+  ]}
+  {...(href ? { href } : {})}
+>
+  <slot />
+</Tag>

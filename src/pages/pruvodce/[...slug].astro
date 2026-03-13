@@ -1,0 +1,40 @@
+---
+import GuideLayout from "@layouts/GuideLayout.astro";
+import ArticleSchema from "@components/seo/ArticleSchema.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const guides = await getCollection("guides");
+  return guides.map((guide) => ({
+    params: { slug: guide.id },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await render(guide);
+
+const breadcrumbs = [
+  { label: "Úvod", href: "/" },
+  { label: guide.data.title },
+];
+---
+
+<GuideLayout
+  title={guide.data.title}
+  description={guide.data.description}
+  headline={guide.data.headline}
+  publishedDate={guide.data.publishedDate}
+  readingTime={guide.data.readingTime}
+  breadcrumbs={breadcrumbs}
+>
+  <ArticleSchema
+    slot="structured-data"
+    title={guide.data.title}
+    description={guide.data.description}
+    url={`/pruvodce/${guide.id}/`}
+    publishedDate={guide.data.publishedDate}
+    updatedDate={guide.data.updatedDate}
+  />
+  <Content />
+</GuideLayout>

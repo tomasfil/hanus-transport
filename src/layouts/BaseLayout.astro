@@ -1,0 +1,28 @@
+---
+import BaseHead from "@components/seo/BaseHead.astro";
+import "@styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+  noindex?: boolean;
+}
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html lang="cs" dir="ltr">
+  <head>
+    <BaseHead {...props} />
+    <slot name="structured-data" />
+    <slot name="head" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

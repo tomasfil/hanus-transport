@@ -1,0 +1,83 @@
+---
+interface Props {
+  name: string;
+  type: "van" | "truck";
+  totalWeight: number;
+  payload: number;
+  palletCapacity: number;
+  hydraulicLift: number;
+  dimensions: {
+    length: number;
+    width: number;
+    height: number;
+  };
+  image?: string;
+  features: string[];
+}
+
+const { name, type, totalWeight, payload, palletCapacity, hydraulicLift, dimensions, image, features } = Astro.props;
+---
+
+<div class="group overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100 transition-shadow hover:shadow-md">
+  {image && (
+    <div class="aspect-[16/10] overflow-hidden bg-gray-100">
+      <img
+        src={image}
+        alt={`${name} — vozidlo Hanuš Transport`}
+        class="size-full object-cover transition-transform duration-300 group-hover:scale-105"
+        loading="lazy"
+        width="600"
+        height="375"
+      />
+    </div>
+  )}
+
+  <div class="p-5">
+    <div class="flex items-start justify-between gap-2">
+      <div>
+        <h3 class="text-lg font-bold text-navy-900">{name}</h3>
+        <span class:list={[
+          "mt-1 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium",
+          type === "van"
+            ? "bg-blue-100 text-blue-700"
+            : "bg-orange-100 text-orange-700",
+        ]}>
+          {type === "van" ? "Dodávka" : "Nákladní vůz"}
+        </span>
+      </div>
+      <div class="text-right shrink-0">
+        <div class="text-2xl font-bold text-orange-500">{totalWeight} t</div>
+        <div class="text-xs text-navy-500">celk. hmotnost</div>
+      </div>
+    </div>
+
+    <div class="mt-4 grid grid-cols-3 gap-2">
+      <div class="rounded-lg bg-gray-50 px-2 py-2 text-center">
+        <div class="text-sm font-bold text-navy-900">{payload} t</div>
+        <div class="text-[11px] text-navy-500">užit. hmotnost</div>
+      </div>
+      <div class="rounded-lg bg-gray-50 px-2 py-2 text-center">
+        <div class="text-sm font-bold text-navy-900">{palletCapacity} palet</div>
+        <div class="text-[11px] text-navy-500">europalet</div>
+      </div>
+      <div class="rounded-lg bg-gray-50 px-2 py-2 text-center">
+        <div class="text-sm font-bold text-navy-900">{hydraulicLift} kg</div>
+        <div class="text-[11px] text-navy-500">plošina</div>
+      </div>
+    </div>
+
+    <p class="mt-3 text-xs text-navy-500">
+      Ložný prostor: {dimensions.length} × {dimensions.width} × {dimensions.height} m
+    </p>
+
+    {features.length > 0 && (
+      <div class="mt-3 flex flex-wrap gap-1.5">
+        {features.map((feature) => (
+          <span class="rounded-full bg-navy-50 px-2.5 py-0.5 text-[11px] text-navy-600">
+            {feature}
+          </span>
+        ))}
+      </div>
+    )}
+  </div>
+</div>

@@ -1,0 +1,68 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/ui/Container.astro";
+import Button from "@components/ui/Button.astro";
+import SchemaOrg from "@components/seo/SchemaOrg.astro";
+import { buildRegionalService } from "@lib/schema-org";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const regions = await getCollection("regions");
+  return regions.map((region) => ({
+    params: { slug: region.data.slug },
+    props: { region },
+  }));
+}
+
+const { region } = Astro.props;
+const { Content } = await render(region);
+
+const breadcrumbs = [
+  { label: "Úvod", href: "/" },
+  { label: "Autodoprava", href: "/autodoprava/slany/" },
+  { label: region.data.regionName },
+];
+
+const regionSchema = buildRegionalService({
+  regionName: region.data.regionName,
+  description: region.data.description,
+  url: `/autodoprava/${region.data.slug}/`,
+});
+---
+
+<PageLayout
+  title={region.data.title}
+  description={region.data.description}
+  breadcrumbs={breadcrumbs}
+>
+  <SchemaOrg slot="structured-data" schema={regionSchema} />
+
+  <section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-16 lg:py-20">
+    <Container>
+      <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
+        {region.data.headline}
+      </h1>
+    </Container>
+  </section>
+
+  <section class="py-12 lg:py-16">
+    <Container>
+      <div class="max-w-3xl mx-auto prose prose-navy prose-headings:text-navy-900 prose-a:text-orange-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-navy-800">
+        <Content />
+      </div>
+    </Container>
+  </section>
+
+  <section class="bg-orange-50 py-12 lg:py-16">
+    <Container>
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold text-navy-900 sm:text-3xl">Potřebujete přepravu v oblasti {region.data.regionName}?</h2>
+        <p class="mt-4 text-navy-600">Kontaktujte nás pro cenovou nabídku na míru.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <Button href="/cenik/" variant="primary" size="lg">Poptávkový formulář</Button>
+          <Button href="tel:+420725961978" variant="outline" size="lg">+420 725 961 978</Button>
+        </div>
+      </div>
+    </Container>
+  </section>
+</PageLayout>

@@ -1,0 +1,28 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import Container from "@components/ui/Container.astro";
+import Button from "@components/ui/Button.astro";
+---
+
+<PageLayout
+  title="Stránka nenalezena"
+  description="Tato stránka neexistuje. Přejděte na hlavní stránku Hanuš Transport."
+  noindex={true}
+>
+  <section class="py-24 lg:py-32">
+    <Container>
+      <div class="text-center max-w-lg mx-auto">
+        <div class="text-8xl font-extrabold text-orange-500">404</div>
+        <h1 class="mt-4 text-3xl font-bold text-navy-900">Stránka nenalezena</h1>
+        <p class="mt-4 text-navy-600">
+          Stránka, kterou hledáte, neexistuje nebo byla přesunuta.
+        </p>
+        <div class="mt-8">
+          <Button href="/" variant="primary" size="lg">
+            Zpět na úvod
+          </Button>
+        </div>
+      </div>
+    </Container>
+  </section>
+</PageLayout>

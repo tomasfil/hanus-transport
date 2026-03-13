@@ -1,0 +1,154 @@
+---
+import { COMPANY } from "@lib/constants";
+---
+
+<form id="contact-form" class="space-y-5">
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="contact-firstname" class="block text-sm font-medium text-navy-700 mb-1">
+        Jméno <span class="text-orange-500">*</span>
+      </label>
+      <input
+        type="text"
+        id="contact-firstname"
+        name="firstname"
+        required
+        maxlength="32"
+        class="w-full rounded-lg border border-gray-300 px-4 py-3 text-navy-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none"
+        placeholder="Jan"
+      />
+    </div>
+    <div>
+      <label for="contact-lastname" class="block text-sm font-medium text-navy-700 mb-1">
+        Příjmení <span class="text-orange-500">*</span>
+      </label>
+      <input
+        type="text"
+        id="contact-lastname"
+        name="lastname"
+        required
+        maxlength="32"
+        class="w-full rounded-lg border border-gray-300 px-4 py-3 text-navy-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none"
+        placeholder="Novák"
+      />
+    </div>
+  </div>
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <div>
+      <label for="contact-email" class="block text-sm font-medium text-navy-700 mb-1">
+        E-mail <span class="text-orange-500">*</span>
+      </label>
+      <input
+        type="email"
+        id="contact-email"
+        name="email"
+        maxlength="50"
+        class="w-full rounded-lg border border-gray-300 px-4 py-3 text-navy-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none"
+        placeholder="jan@firma.cz"
+      />
+    </div>
+    <div>
+      <label for="contact-phone" class="block text-sm font-medium text-navy-700 mb-1">
+        Telefon <span class="text-orange-500">*</span>
+      </label>
+      <input
+        type="tel"
+        id="contact-phone"
+        name="phone"
+        class="w-full rounded-lg border border-gray-300 px-4 py-3 text-navy-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none"
+        placeholder="725 961 978"
+      />
+    </div>
+  </div>
+  <p class="text-xs text-navy-500"><span class="text-orange-500">*</span> Vyplňte e-mail nebo telefon (alespoň jeden kontakt).</p>
+
+  <div>
+    <label for="contact-message" class="block text-sm font-medium text-navy-700 mb-1">
+      Váš požadavek <span class="text-orange-500">*</span>
+    </label>
+    <textarea
+      id="contact-message"
+      name="text"
+      required
+      minlength="20"
+      maxlength="500"
+      rows="5"
+      class="w-full rounded-lg border border-gray-300 px-4 py-3 text-navy-900 placeholder:text-gray-400 focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 focus:outline-none resize-y"
+      placeholder="Popište, co potřebujete přepravit, odkud, kam a kdy..."
+    ></textarea>
+  </div>
+
+  <div class="flex items-start gap-3">
+    <input
+      type="checkbox"
+      id="contact-gdpr"
+      name="gdpr"
+      required
+      class="mt-1 size-4 rounded border-gray-300 text-orange-500 focus:ring-orange-500"
+    />
+    <label for="contact-gdpr" class="text-sm text-navy-600">
+      Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky dle GDPR.
+      <span class="text-orange-500">*</span>
+    </label>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full rounded-lg bg-orange-500 px-6 py-4 text-lg font-semibold text-white transition-colors hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 sm:w-auto"
+  >
+    Odeslat poptávku
+  </button>
+
+  <div id="form-status" class="hidden rounded-lg p-4 text-sm" aria-live="polite"></div>
+</form>
+
+<script is:inline>
+  document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('form-status');
+    const email = form.email.value.trim();
+    const phone = form.phone.value.trim();
+
+    if (!email && !phone) {
+      status.className = 'rounded-lg p-4 text-sm bg-red-50 text-red-700';
+      status.textContent = 'Vyplňte prosím e-mail nebo telefon.';
+      return;
+    }
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Odesílám...';
+
+    try {
+      const data = {
+        firstname: form.firstname.value,
+        lastname: form.lastname.value,
+        email: email,
+        phone: phone,
+        text: form.text.value,
+      };
+
+      const res = await fetch('https://us-central1-hanus-transport.cloudfunctions.net/sendMail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        status.className = 'rounded-lg p-4 text-sm bg-green-50 text-green-700';
+        status.textContent = 'Děkujeme! Vaše poptávka byla odeslána. Ozveme se vám co nejdříve.';
+        form.reset();
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      status.className = 'rounded-lg p-4 text-sm bg-red-50 text-red-700';
+      status.textContent = 'Nepodařilo se odeslat. Zkuste to prosím znovu nebo nám zavolejte.';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Odeslat poptávku';
+    }
+  });
+</script>

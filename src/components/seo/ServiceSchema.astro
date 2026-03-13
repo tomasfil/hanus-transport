@@ -1,0 +1,15 @@
+---
+import SchemaOrg from "./SchemaOrg.astro";
+import { buildTransportService } from "@lib/schema-org";
+
+interface Props {
+  serviceName: string;
+  description: string;
+  url: string;
+  areaServed?: string;
+}
+
+const props = Astro.props;
+---
+
+<SchemaOrg schema={buildTransportService(props)} />
