@@ -1,6 +1,10 @@
+// Astro 5 Content Collections — each collection maps to a Markdown folder
+// and a Zod schema for type-safe frontmatter validation at build time.
+// Used by dynamic routes: /sluzby/[slug], /autodoprava/[slug], /pruvodce/[slug]
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+// Fleet vehicles displayed on /vozovy-park/ — order determines display sequence
 const vehicles = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/vehicles" }),
   schema: z.object({
@@ -21,6 +25,7 @@ const vehicles = defineCollection({
   }),
 });
 
+// Service landing pages at /sluzby/<slug>/ — description capped at 160 chars for meta tags
 const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
   schema: z.object({
@@ -35,6 +40,7 @@ const services = defineCollection({
   }),
 });
 
+// Regional SEO landing pages at /autodoprava/<slug>/ — target local search queries
 const regions = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/regions" }),
   schema: z.object({
@@ -48,6 +54,7 @@ const regions = defineCollection({
   }),
 });
 
+// Informational articles at /pruvodce/<slug>/ — build topical authority for freight queries
 const guides = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/guides" }),
   schema: z.object({

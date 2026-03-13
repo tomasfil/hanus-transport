@@ -1,4 +1,6 @@
 ---
+// Generic JSON-LD injector — accepts any schema object from lib/schema-org.ts
+// and renders it as a <script type="application/ld+json"> tag in the page head.
 interface Props {
   schema: Record<string, unknown>;
 }

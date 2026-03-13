@@ -79,7 +79,8 @@ function isActive(href: string): boolean {
     </div>
   </div>
 
-  <!-- Mobile menu (CSS-only) -->
+  <!-- Mobile menu: CSS-only toggle via hidden checkbox + peer selector.
+       Avoids any client-side JS for static output compliance. -->
   <input type="checkbox" id="mobile-menu-toggle" class="peer sr-only" />
   <div class="hidden peer-checked:block lg:hidden border-t border-gray-100 bg-white">
     <nav class="mx-auto max-w-7xl px-4 py-4 sm:px-6" aria-label="Mobilní navigace">

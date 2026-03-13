@@ -3,7 +3,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/ui/Container.astro";
 import Button from "@components/ui/Button.astro";
 import SchemaOrg from "@components/seo/SchemaOrg.astro";
-import { buildRegionalService } from "@lib/schema-org";
+import { buildTransportService } from "@lib/schema-org";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -23,7 +23,8 @@ const breadcrumbs = [
   { label: region.data.regionName },
 ];
 
-const regionSchema = buildRegionalService({
+const regionSchema = buildTransportService({
+  serviceName: "Autodoprava",
   regionName: region.data.regionName,
   description: region.data.description,
   url: `/autodoprava/${region.data.slug}/`,

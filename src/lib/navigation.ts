@@ -1,3 +1,5 @@
+// Navigation structure shared by Header (desktop + mobile) and Footer.
+// Supports one level of nesting via children — used for dropdown menus.
 export interface NavItem {
   label: string;
   href: string;

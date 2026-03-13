@@ -1,3 +1,5 @@
+/* Tailwind CSS 4 — uses @theme for design tokens instead of tailwind.config.js.
+   Navy (trust/professionalism) + Orange (CTA/energy) brand palette. */
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -39,6 +41,8 @@
   --font-sans: "Inter", "system-ui", "-apple-system", "Segoe UI", sans-serif;
 }
 
+/* Self-hosted Inter variable font — split into latin-ext (Czech diacritics)
+   and latin subsets for optimal loading. Uses woff2-variations for weight axis. */
 @font-face {
   font-family: "Inter";
   font-style: normal;
@@ -66,6 +70,7 @@
     @apply font-sans text-navy-900 bg-white antialiased;
   }
 
+  /* Czech text benefits from hyphenation — long compound words break cleanly */
   p, li, dd {
     hyphens: auto;
     -webkit-hyphens: auto;

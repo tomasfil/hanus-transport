@@ -1,3 +1,6 @@
+// JSON-LD structured data builders for SEO.
+// All schemas use entity stitching via @id URIs so Google connects
+// Organization, WebSite, Service, and Article into a Knowledge Graph.
 import { SITE, COMPANY, SERVICES } from "./constants";
 
 export function buildBreadcrumbs(
@@ -63,41 +66,26 @@ export function buildArticle(options: {
   };
 }
 
+// Handles both specific service pages and regional landing pages.
+// Regional pages pass regionName to override the service name and area.
 export function buildTransportService(options: {
   serviceName: string;
   description: string;
   url: string;
   areaServed?: string;
+  regionName?: string;
 }) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    serviceType: options.serviceName,
-    name: options.serviceName,
-    description: options.description,
-    url: `${SITE.url}${options.url}`,
-    provider: {
-      "@type": "LocalBusiness",
-      "@id": `${SITE.url}/#organization`,
-      name: COMPANY.name,
-    },
-    areaServed: options.areaServed
-      ? { "@type": "AdministrativeArea", name: options.areaServed }
-      : { "@type": "Country", name: "Česká republika" },
-    inLanguage: "cs",
-  };
-}
+  const name = options.regionName
+    ? `Autodoprava — ${options.regionName}`
+    : options.serviceName;
+  const serviceType = options.regionName ? "Autodoprava" : options.serviceName;
+  const area = options.regionName ?? options.areaServed;
 
-export function buildRegionalService(options: {
-  regionName: string;
-  description: string;
-  url: string;
-}) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Autodoprava",
-    name: `Autodoprava — ${options.regionName}`,
+    serviceType,
+    name,
     description: options.description,
     url: `${SITE.url}${options.url}`,
     provider: {
@@ -105,10 +93,9 @@ export function buildRegionalService(options: {
       "@id": `${SITE.url}/#organization`,
       name: COMPANY.name,
     },
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: options.regionName,
-    },
+    areaServed: area
+      ? { "@type": "AdministrativeArea", name: area }
+      : { "@type": "Country", name: "Česká republika" },
     inLanguage: "cs",
   };
 }

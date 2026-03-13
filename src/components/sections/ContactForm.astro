@@ -103,6 +103,8 @@ import { COMPANY } from "@lib/constants";
   <div id="form-status" class="hidden rounded-lg p-4 text-sm" aria-live="polite"></div>
 </form>
 
+<!-- is:inline because Astro strips module scripts from static builds.
+     Sends form data to Firebase Cloud Function v2 endpoint. -->
 <script is:inline>
   document.getElementById('contact-form').addEventListener('submit', async function(e) {
     e.preventDefault();

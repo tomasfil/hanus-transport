@@ -12,7 +12,9 @@ const DEDICATED_REGIONS = new Set(COVERAGE_REGIONS.map((r) => r.id));
       Oblast působnosti
     </SectionHeading>
 
-    <!-- SVG Map (visible md+) -->
+    <!-- SVG map of Czech Republic regions — inline because each region path
+         needs interactive hover states and links to regional landing pages.
+         Paths are traced from official ČSÚ map data. Hidden on mobile (cards below). -->
     <div class="hidden md:block mb-10">
       <svg
         viewBox="0 0 620 360"

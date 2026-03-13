@@ -1,3 +1,6 @@
+// Centralized business constants — single source of truth for SEO metadata,
+// JSON-LD structured data, and UI content across all pages.
+// All data verified against ARES registry (IČO 06340199).
 export const SITE = {
   name: "Hanuš Transport s.r.o. — Autodoprava",
   shortName: "Hanuš Transport",
@@ -53,6 +56,8 @@ export const SERVICES = [
   "Svoz elektrospotřebičů",
 ] as const;
 
+// Regions with dedicated SEO landing pages — each gets a /autodoprava/<id>/ route.
+// Order matters: displayed in this sequence on the region coverage map.
 export const COVERAGE_REGIONS = [
   { id: "slany", name: "Slaný", type: "city" as const },
   { id: "kladno", name: "Kladno", type: "city" as const },
