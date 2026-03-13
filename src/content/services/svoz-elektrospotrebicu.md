@@ -1,6 +1,6 @@
 ---
-title: "Svoz elektrospotřebičů"
-description: "Svoz použitých elektrospotřebičů od prodejců, servisů a sběrných dvorů ve Středočeském kraji. Hanuš Transport."
+title: "Svoz elektrospotřebičů ve Středočeském kraji"
+description: "Pravidelný svoz použitých elektrospotřebičů od prodejců, servisů a sběrných dvorů ve Středočeském kraji. Hanuš Transport — autodoprava ze Slaného."
 headline: "Svoz použitých elektrospotřebičů"
 slug: "svoz-elektrospotrebicu"
 icon: "recycle"

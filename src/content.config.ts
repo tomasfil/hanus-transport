@@ -25,12 +25,12 @@ const vehicles = defineCollection({
   }),
 });
 
-// Service landing pages at /sluzby/<slug>/ — description capped at 160 chars for meta tags
+// Service landing pages at /sluzby/<slug>/ — title/description length-optimized for SERP
 const services = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/services" }),
   schema: z.object({
-    title: z.string(),
-    description: z.string().max(160),
+    title: z.string().min(30).max(60),
+    description: z.string().min(120).max(160),
     headline: z.string(),
     slug: z.string(),
     icon: z.string(),
@@ -40,12 +40,12 @@ const services = defineCollection({
   }),
 });
 
-// Regional SEO landing pages at /autodoprava/<slug>/ — target local search queries
+// Regional SEO landing pages at /autodoprava/<slug>/ — title/description length-optimized for SERP
 const regions = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/regions" }),
   schema: z.object({
-    title: z.string(),
-    description: z.string().max(160),
+    title: z.string().min(30).max(60),
+    description: z.string().min(120).max(160),
     headline: z.string(),
     regionName: z.string(),
     slug: z.string(),
@@ -54,12 +54,12 @@ const regions = defineCollection({
   }),
 });
 
-// Informational articles at /pruvodce/<slug>/ — build topical authority for freight queries
+// Informational articles at /pruvodce/<slug>/ — title/description length-optimized for SERP
 const guides = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/guides" }),
   schema: z.object({
-    title: z.string(),
-    description: z.string().max(160),
+    title: z.string().min(30).max(60),
+    description: z.string().min(120).max(160),
     headline: z.string(),
     publishedDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),

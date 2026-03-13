@@ -1,6 +1,6 @@
 ---
-title: "Jak se počítá cena přepravy"
-description: "Zjistěte, z čeho se skládá cena nákladní přepravy. Vzdálenost, hmotnost, typ vozidla a další faktory."
+title: "Jak se počítá cena nákladní přepravy — přehled faktorů"
+description: "Zjistěte, z čeho se skládá cena nákladní přepravy. Vzdálenost, hmotnost, typ vozidla, termín a další faktory ovlivňující cenu autodopravy."
 headline: "Jak se počítá cena přepravy"
 publishedDate: 2025-01-15
 readingTime: 5

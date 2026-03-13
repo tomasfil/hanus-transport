@@ -1,6 +1,6 @@
 ---
-title: "Přeprava palet"
-description: "Paletová přeprava po celé ČR. Kapacita až 18 europalet, hydraulické plošiny na všech vozidlech. Hanuš Transport."
+title: "Přeprava palet — kapacita až 18 europalet"
+description: "Paletová přeprava po celé ČR. Kapacita až 18 europalet na jízdu, hydraulické plošiny na všech vozidlech. Hanuš Transport — autodoprava ze Slaného."
 headline: "Přeprava palet a paletového zboží"
 slug: "preprava-palet"
 icon: "pallet"

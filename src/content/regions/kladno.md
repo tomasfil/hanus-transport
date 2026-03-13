@@ -1,6 +1,6 @@
 ---
-title: "Autodoprava Kladno"
-description: "Autodoprava a přeprava zboží v Kladně a okolí. Nákladní doprava do 12 tun. Hanuš Transport — 15 km od Kladna."
+title: "Autodoprava Kladno — přeprava zboží do 12 tun"
+description: "Autodoprava a přeprava zboží v Kladně a okolí. Nákladní doprava do 12 tun s hydraulickými plošinami. Hanuš Transport — pouhých 15 km od Kladna."
 headline: "Autodoprava Kladno — Hanuš Transport"
 regionName: "Kladno"
 slug: "kladno"

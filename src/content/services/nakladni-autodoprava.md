@@ -1,6 +1,6 @@
 ---
-title: "Nákladní autodoprava"
-description: "Spolehlivá nákladní autodoprava po celé ČR. Vozidla od 3,5 do 12 tun s hydraulickými plošinami. Hanuš Transport ze Slaného."
+title: "Nákladní autodoprava po celé ČR — do 12 tun"
+description: "Spolehlivá nákladní autodoprava po celé ČR. Vozidla od 3,5 do 12 tun s hydraulickými plošinami a GPS sledováním. Hanuš Transport ze Slaného."
 headline: "Nákladní autodoprava po celé České republice"
 slug: "nakladni-autodoprava"
 icon: "truck"

@@ -1,6 +1,6 @@
 ---
-title: "Jak připravit zásilku k přepravě"
-description: "Praktický návod jak správně připravit zásilku pro nákladní přepravu. Balení, paletizace, značení."
+title: "Jak připravit zásilku k přepravě — návod krok za krokem"
+description: "Praktický návod jak správně připravit zásilku pro nákladní přepravu. Balení, paletizace, značení a tipy pro bezpečnou manipulaci s hydraulickou plošinou."
 headline: "Jak připravit zásilku k přepravě"
 publishedDate: 2025-02-01
 readingTime: 4

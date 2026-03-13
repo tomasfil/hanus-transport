@@ -1,6 +1,6 @@
 ---
-title: "Přeprava stavebnin"
-description: "Přeprava stavebních materiálů po celé ČR. Hydraulické plošiny do 1500 kg pro snadnou manipulaci. Hanuš Transport."
+title: "Přeprava stavebnin a stavebních materiálů"
+description: "Přeprava stavebních materiálů po celé ČR. Vozidla do 12 tun s hydraulickými plošinami do 1500 kg pro snadnou manipulaci. Hanuš Transport ze Slaného."
 headline: "Přeprava stavebnin a stavebních materiálů"
 slug: "preprava-stavebnin"
 icon: "building"

@@ -1,6 +1,6 @@
 ---
-title: "Autodoprava Praha"
-description: "Autodoprava a přeprava zboží v Praze. Nákladní doprava do 12 tun s hydraulickými plošinami. Hanuš Transport."
+title: "Autodoprava Praha — nákladní přeprava do 12 tun"
+description: "Autodoprava a přeprava zboží v Praze a okolí. Nákladní doprava do 12 tun s hydraulickými plošinami. Hanuš Transport — 40 km od centra Prahy."
 headline: "Autodoprava Praha — Hanuš Transport"
 regionName: "Praha"
 slug: "praha"

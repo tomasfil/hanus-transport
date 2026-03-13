@@ -1,6 +1,6 @@
 ---
-title: "Autodoprava Středočeský kraj"
-description: "Autodoprava a přeprava zboží ve Středočeském kraji. Hanuš Transport — místní dopravce ze Slaného."
+title: "Autodoprava Středočeský kraj — dopravce ze Slaného"
+description: "Autodoprava a přeprava zboží ve Středočeském kraji. Nákladní doprava do 12 tun, svoz elektrospotřebičů. Hanuš Transport — místní dopravce ze Slaného."
 headline: "Autodoprava Středočeský kraj — Hanuš Transport"
 regionName: "Středočeský kraj"
 slug: "stredocesky-kraj"

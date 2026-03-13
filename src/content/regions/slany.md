@@ -1,6 +1,6 @@
 ---
-title: "Autodoprava Slaný"
-description: "Autodoprava a přeprava zboží ze Slaného. Nákladní doprava do 12 tun, hydraulické plošiny. Hanuš Transport ze Slaného."
+title: "Autodoprava Slaný — místní dopravce od 2011"
+description: "Autodoprava a přeprava zboží ze Slaného a okolí. Nákladní doprava do 12 tun, hydraulické plošiny na všech vozidlech. Hanuš Transport — domácí dopravce."
 headline: "Autodoprava Slaný — Hanuš Transport"
 regionName: "Slaný"
 slug: "slany"
