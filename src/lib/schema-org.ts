@@ -125,9 +125,14 @@ export function buildTransportCompany() {
         telephone: COMPANY.contacts.martinHanus.phone,
         email: COMPANY.email,
         description: SITE.description,
-        foundingDate: `${COMPANY.foundedOsvč}`,
+        foundingDate: `${COMPANY.founded}`,
         legalName: COMPANY.name,
         taxID: COMPANY.dic,
+        identifier: {
+          "@type": "PropertyValue",
+          name: "IČO",
+          value: COMPANY.ico,
+        },
         address: {
           "@type": "PostalAddress",
           streetAddress: "Na Folimance 2155/15",
@@ -150,6 +155,7 @@ export function buildTransportCompany() {
             itemOffered: { "@type": "Service", name: service },
           })),
         },
+        priceRange: "Individuální kalkulace",
         sameAs: [COMPANY.aresUrl],
         employee: [
           {

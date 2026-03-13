@@ -29,4 +29,4 @@ Hanuš Transport zajišťuje pravidelný svoz použitých elektrických spotřeb
 
 ## Oblast svozu
 
-Svoz realizujeme primárně ve **Středočeském kraji** s pravidelnou trasou. Na vyžádání zajistíme i jednorázový odvoz z jiných lokalit.
+Svoz realizujeme primárně ve **[Středočeském kraji](/autodoprava/stredocesky-kraj/)** s pravidelnou trasou. Na vyžádání zajistíme i jednorázový odvoz z jiných lokalit.

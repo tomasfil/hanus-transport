@@ -24,6 +24,8 @@ const breadcrumbs = [
         src="/images/fleet/flotila.webp"
         alt="Flotila vozidel Hanuš Transport"
         class="size-full object-cover"
+        width="1200"
+        height="675"
       />
       <div class="absolute inset-0 bg-navy-900/75"></div>
     </div>
@@ -42,6 +44,7 @@ const breadcrumbs = [
 
   <section class="py-12 lg:py-16">
     <Container>
+      <h2 class="sr-only">Přehled vozidel</h2>
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {vehicles.map((vehicle) => (
           <FleetCard {...vehicle.data} />
@@ -75,6 +78,21 @@ const breadcrumbs = [
             <svg class="size-5 text-orange-500 mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
             <span class="text-navy-700">Upínací popruhy pro zajištění nákladu</span>
           </li>
+        </ul>
+      </div>
+    </Container>
+  </section>
+
+  <section class="py-12 lg:py-16">
+    <Container>
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl font-bold text-navy-900 sm:text-3xl">Naše služby</h2>
+        <p class="mt-4 text-navy-600">Vozidla z našeho parku nasazujeme podle typu zásilky a požadavků na přepravu.</p>
+        <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+          <li><a href="/sluzby/nakladni-autodoprava/" class="flex items-center gap-2 rounded-lg border border-gray-100 px-4 py-3 text-sm font-medium text-navy-700 hover:bg-gray-50 hover:text-orange-600 transition-colors">Nákladní autodoprava</a></li>
+          <li><a href="/sluzby/preprava-stavebnin/" class="flex items-center gap-2 rounded-lg border border-gray-100 px-4 py-3 text-sm font-medium text-navy-700 hover:bg-gray-50 hover:text-orange-600 transition-colors">Přeprava stavebnin</a></li>
+          <li><a href="/sluzby/preprava-palet/" class="flex items-center gap-2 rounded-lg border border-gray-100 px-4 py-3 text-sm font-medium text-navy-700 hover:bg-gray-50 hover:text-orange-600 transition-colors">Přeprava palet</a></li>
+          <li><a href="/sluzby/svoz-elektrospotrebicu/" class="flex items-center gap-2 rounded-lg border border-gray-100 px-4 py-3 text-sm font-medium text-navy-700 hover:bg-gray-50 hover:text-orange-600 transition-colors">Svoz elektrospotřebičů</a></li>
         </ul>
       </div>
     </Container>

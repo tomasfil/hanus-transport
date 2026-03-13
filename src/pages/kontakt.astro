@@ -1,6 +1,7 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/ui/Container.astro";
+import TransportCompanySchema from "@components/seo/TransportCompanySchema.astro";
 import { COMPANY, SITE } from "@lib/constants";
 
 const breadcrumbs = [
@@ -14,6 +15,8 @@ const breadcrumbs = [
   description="Kontaktujte Hanuš Transport s.r.o. — autodoprava ze Slaného. Telefon, e-mail, IČO 06340199. Martin Hanuš +420 725 961 978."
   breadcrumbs={breadcrumbs}
 >
+  <TransportCompanySchema slot="structured-data" />
+
   <section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-16 lg:py-20">
     <Container>
       <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">

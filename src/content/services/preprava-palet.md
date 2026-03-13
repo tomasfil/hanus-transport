@@ -11,7 +11,7 @@ order: 3
 
 ## Efektivní paletová přeprava
 
-Přeprava zboží na europaletách je naší každodenní prací. Vozový park je navržen tak, aby zvládl od 8 do 18 europalet na jednu jízdu.
+Přeprava zboží na europaletách je naší každodenní prací. [Vozový park](/vozovy-park/) je navržen tak, aby zvládl od 8 do 18 europalet na jednu jízdu.
 
 ## Kapacita vozového parku
 

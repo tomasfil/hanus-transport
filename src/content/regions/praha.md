@@ -16,4 +16,4 @@ Praha je největší odběratelské i dodavatelské centrum v Česku. Zajišťuj
 
 - **Pravidelné jízdy** — do Prahy jezdíme prakticky denně
 - **Dobré napojení** — přes D7 rychle v centru Prahy
-- **Vozidla do 12 tun** — projedou i v městských zónách s omezením
+- **[Vozidla do 12 tun](/vozovy-park/)** — projedou i v městských zónách s omezením

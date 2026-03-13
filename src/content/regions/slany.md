@@ -18,4 +18,4 @@ Slaný je domovem Hanuš Transport od samého začátku. Společnost zde začala
 - **Znalost místních komunikací** — rychlé a efektivní trasy
 - **Osobní přístup** — jsme lokální firma, záleží nám na každém zákazníkovi
 
-Ze Slaného zajišťujeme veškeré přepravní služby — nákladní autodopravu, přepravu stavebnin, paletovou přepravu i svoz elektrospotřebičů.
+Ze Slaného zajišťujeme veškeré přepravní služby — [nákladní autodopravu](/sluzby/nakladni-autodoprava/), [přepravu stavebnin](/sluzby/preprava-stavebnin/), [paletovou přepravu](/sluzby/preprava-palet/) i [svoz elektrospotřebičů](/sluzby/svoz-elektrospotrebicu/).

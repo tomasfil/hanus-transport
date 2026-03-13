@@ -14,7 +14,7 @@ Kladno je průmyslové centrum Středočeského kraje. Z našeho zázemí ve Sla
 
 ## Typické zakázky v Kladně
 
-- Přeprava průmyslových dílů z výrobních závodů
-- Zásobování staveb stavebním materiálem
-- Rozvoz paletového zboží do obchodů a skladů
-- Svoz elektrospotřebičů od prodejců
+- [Přeprava průmyslových dílů](/sluzby/nakladni-autodoprava/) z výrobních závodů
+- Zásobování staveb [stavebním materiálem](/sluzby/preprava-stavebnin/)
+- Rozvoz [paletového zboží](/sluzby/preprava-palet/) do obchodů a skladů
+- [Svoz elektrospotřebičů](/sluzby/svoz-elektrospotrebicu/) od prodejců

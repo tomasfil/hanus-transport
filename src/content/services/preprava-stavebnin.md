@@ -11,7 +11,7 @@ order: 2
 
 ## Specializace na stavební materiály
 
-Přeprava stavebnin vyžaduje vozidla s dostatečnou nosností a vybavení pro bezpečnou manipulaci s těžkými materiály. Disponujeme nákladními vozy s celkovou hmotností do 12 tun a hydraulickými plošinami s nosností až 1 500 kg.
+Přeprava stavebnin vyžaduje vozidla s dostatečnou nosností a vybavení pro bezpečnou manipulaci s těžkými materiály. Disponujeme [nákladními vozy](/vozovy-park/) s celkovou hmotností do 12 tun a hydraulickými plošinami s nosností až 1 500 kg.
 
 ## Co přepravujeme
 

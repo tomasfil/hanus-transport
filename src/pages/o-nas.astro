@@ -2,6 +2,7 @@
 import PageLayout from "@layouts/PageLayout.astro";
 import Container from "@components/ui/Container.astro";
 import Button from "@components/ui/Button.astro";
+import TransportCompanySchema from "@components/seo/TransportCompanySchema.astro";
 import { COMPANY, FLEET_STATS } from "@lib/constants";
 
 const breadcrumbs = [
@@ -15,6 +16,8 @@ const breadcrumbs = [
   description="Hanuš Transport s.r.o. — autodoprava od roku 2011. Ze živnosti k firmě, ze Slaného po celou ČR. 6 vozidel, hydraulické plošiny, GPS sledování."
   breadcrumbs={breadcrumbs}
 >
+  <TransportCompanySchema slot="structured-data" />
+
   <section class="bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 py-16 lg:py-20">
     <Container>
       <h1 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -34,14 +37,14 @@ const breadcrumbs = [
 
         <h2 class="mt-12 text-2xl font-bold text-navy-900">Co děláme</h2>
         <p class="mt-4 text-navy-700 leading-relaxed">
-          Specializujeme se na svižnou a spolehlivou přepravu zboží a stavebnin po celé České republice.
-          Zajišťujeme také svoz použitých elektrických spotřebičů od koncových prodejců, servisů a sběrných dvorů
+          Specializujeme se na svižnou a spolehlivou <a href="/sluzby/nakladni-autodoprava/" class="text-orange-600 hover:underline">přepravu zboží</a> a&nbsp;<a href="/sluzby/preprava-stavebnin/" class="text-orange-600 hover:underline">stavebnin</a> po celé České republice.
+          Zajišťujeme také <a href="/sluzby/svoz-elektrospotrebicu/" class="text-orange-600 hover:underline">svoz použitých elektrických spotřebičů</a> od koncových prodejců, servisů a sběrných dvorů
           ve Středočeském kraji.
         </p>
 
         <h2 class="mt-12 text-2xl font-bold text-navy-900">Naše možnosti</h2>
         <p class="mt-4 text-navy-700 leading-relaxed">
-          Jsme vybaveni {FLEET_STATS.vehicleCount} vozidly od dodávek po nákladní auta s celkovou hmotností
+          Jsme vybaveni <a href="/vozovy-park/" class="text-orange-600 hover:underline">{FLEET_STATS.vehicleCount} vozidly</a> od dodávek po nákladní auta s celkovou hmotností
           do&nbsp;{FLEET_STATS.maxWeight}&nbsp;tun. Na všech vozidlech jsou hydraulické plošiny s nosností
           od&nbsp;{FLEET_STATS.hydraulicLiftMin} do&nbsp;{FLEET_STATS.hydraulicLiftMax}&nbsp;kg.
           Kapacita až {FLEET_STATS.maxPallets} europalet na jízdu.

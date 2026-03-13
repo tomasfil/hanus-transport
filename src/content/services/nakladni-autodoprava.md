@@ -11,15 +11,15 @@ order: 1
 
 ## Spolehlivá přeprava zboží po celé ČR
 
-Hanuš Transport zajišťuje nákladní autodopravu po celé České republice. Disponujeme 6 vozidly od dodávek po nákladní automobily s celkovou hmotností do 12 tun. Všechna vozidla jsou vybavena hydraulickými plošinami s nosností 750 až 1 500 kg.
+Hanuš Transport zajišťuje nákladní autodopravu po celé České republice. Disponujeme [6 vozidly](/vozovy-park/) od dodávek po nákladní automobily s celkovou hmotností do 12 tun. Všechna vozidla jsou vybavena hydraulickými plošinami s nosností 750 až 1 500 kg.
 
 ## Co přepravujeme
 
 - Zboží na europaletách (kapacita až 18 palet)
-- Stavební materiály a stavebiny
+- [Stavební materiály a stavebniny](/sluzby/preprava-stavebnin/)
 - Průmyslové díly a komponenty
 - Spotřební zboží pro maloobchodní řetězce
-- Elektrospotřebiče a elektroniku
+- [Elektrospotřebiče](/sluzby/svoz-elektrospotrebicu/) a elektroniku
 
 ## Proč Hanuš Transport
 

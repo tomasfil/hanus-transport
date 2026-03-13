@@ -18,7 +18,7 @@ Unikátní služba — zajišťujeme pravidelný svoz použitých elektrických 
 
 ## Všechny služby v regionu
 
-- Nákladní autodopravu do 12 tun
-- Přepravu stavebnin s hydraulickými plošinami
-- Paletovou přepravu (až 18 europalet)
-- Svoz elektrospotřebičů (pravidelné trasy)
+- [Nákladní autodopravu](/sluzby/nakladni-autodoprava/) do 12 tun
+- [Přepravu stavebnin](/sluzby/preprava-stavebnin/) s hydraulickými plošinami
+- [Paletovou přepravu](/sluzby/preprava-palet/) (až 18 europalet)
+- [Svoz elektrospotřebičů](/sluzby/svoz-elektrospotrebicu/) (pravidelné trasy)
