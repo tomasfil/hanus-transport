@@ -26,6 +26,15 @@ Freight transport company website. Astro 5 static site targeting SEO/GEO dominan
 - All visible text, aria-labels, alt text: **Czech**
 - Code, comments, variable names, CSS classes, commit messages: **English**
 
+## Environment
+
+Auto-detected on every session start via `.claude/hooks/detect-env.sh` (SessionStart hook).
+Adapt all commands to match the detected OS and shell. Fallback values if hook fails:
+- OS: Windows 11
+- Shell: bash (Git Bash)
+- Path style: forward-slash (Unix-style in bash)
+- IMPORTANT: All commands use the detected shell syntax.
+
 ## Build & Dev
 
 - Build: `npm run build` (NEVER use bare `npx astro` — resolves wrong version)
