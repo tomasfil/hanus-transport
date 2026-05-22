@@ -1,79 +1,45 @@
 # Hanuš Transport — hanustransport.cz
 
-Freight transport company website. Astro 5 static site targeting SEO/GEO dominance in Czech freight transport niche.
+Freight-transport company website: Astro 5 static site targeting SEO/GEO dominance in the Czech freight niche. Part of the `seo-geo-webs` workspace — shared stack and conventions live in the root `CLAUDE.md`.
 
-## Stack
+## Business facts — verified data only
 
-- Astro 5 + TypeScript + Tailwind CSS 4 (static output, zero client JS except contact form)
-- Firebase Hosting + Cloud Function v2 (Node.js 22) for contact form
-- Self-hosted Inter fonts (woff2-variations)
-- `@tailwindcss/typography` for prose/markdown content
-
-## Business
+Sources for any on-site fact: the original site, the ARES registry, or owner-confirmed info. Never invent statistics, capabilities, or claims. Never deploy without local verify + owner permission.
 
 - **Company:** Hanuš Transport s.r.o., IČO 06340199, DIČ CZ06340199
-- **Owner:** Martin Hanuš (jednatel), +420 725 961 978
-- **Dispatch:** Pavla Hanušová, +420 725 091 376
-- **Registered address:** Na Folimance 2155/15, Vinohrady, 120 00 Praha
-- **Operational base:** Slaný, Středočeský kraj
+- **Owner:** Martin Hanuš (jednatel), +420 725 961 978 · **Dispatch:** Pavla Hanušová, +420 725 091 376
+- **Registered:** Na Folimance 2155/15, Vinohrady, 120 00 Praha · **Base:** Slaný, Středočeský kraj
 - **Founded:** 2011 (OSVČ) → 2017 (s.r.o.)
-- **Services:** Road freight (≤12t), construction materials, pallets, e-waste collection
+- **Services:** road freight (≤12t), construction materials, pallets, e-waste collection
 - **Fleet:** 6 vehicles (Renault Master, Iveco Daily, 4× MAN TGL/TGM), all with hydraulic lifts
 - **ARES:** https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/06340199
 
-## Content Language
+## Stack specifics
 
-- All visible text, aria-labels, alt text: **Czech**
-- Code, comments, variable names, CSS classes, commit messages: **English**
-
-## Environment
-
-Auto-detected on every session start via `.claude/hooks/detect-env.sh` (SessionStart hook).
-Adapt all commands to match the detected OS and shell. Fallback values if hook fails:
-- OS: Windows 11
-- Shell: bash (Git Bash)
-- Path style: forward-slash (Unix-style in bash)
-- IMPORTANT: All commands use the detected shell syntax.
-
-## Build & Dev
-
-- Build: `npm run build` (NEVER use bare `npx astro` — resolves wrong version)
-- Dev: `npm run dev` (localhost:4321)
-- Check: `npm run check` (astro check)
+- Static output, zero client JS **except the contact form**
+- Self-hosted Inter (`public/fonts/*.woff2`); `@tailwindcss/typography` for prose
+- Deploy: Firebase Hosting (`firebase.json` — serves `dist/`, 301 redirects, cache headers, `cleanUrls` + `trailingSlash`)
+- Contact form (`src/components/sections/ContactForm.astro`) POSTs to a Firebase Cloud Function `sendMail` (us-central1); the function source is NOT in this repo
+- Build `npm run build`, dev `npm run dev` (localhost:4321), check `npm run check`
 
 ## Architecture
 
 - `src/lib/constants.ts` — SITE, COMPANY, FLEET_STATS, SERVICES, COVERAGE_REGIONS
-- `src/lib/navigation.ts` — main navigation structure
+- `src/lib/navigation.ts` — main navigation
 - `src/lib/schema-org.ts` — JSON-LD builders
-- `src/content.config.ts` — vehicles, services, regions, guides collections (glob() + Zod)
+- `src/content.config.ts` — collections `vehicles`, `services`, `regions`, `guides` (glob() + Zod)
 - `src/data/faq.json` — FAQ Q&A pairs
-- Layout hierarchy: BaseLayout → PageLayout → ServiceLayout / GuideLayout
-- CSS-only mobile menu (checkbox hack), CSS-only accordion (details/summary)
-
-## Path Aliases
-
-- `@components/*` → `src/components/*`
-- `@layouts/*` → `src/layouts/*`
-- `@lib/*` → `src/lib/*`
-- `@data/*` → `src/data/*`
-- `@styles/*` → `src/styles/*`
+- Layouts: BaseLayout → PageLayout → ServiceLayout / GuideLayout
+- CSS-only mobile menu (checkbox hack) and accordion (`details`/`summary`)
+- Path aliases (`tsconfig.json`): `@components`, `@layouts`, `@lib`, `@data`, `@styles`, `@assets`
 
 ## Design
 
-- Colors: Navy (primary, trust) + Orange (accent, CTA)
-- Theme tokens defined in `src/styles/global.css` via `@theme`
-- Logo: `public/logo.svg` (potrace-traced from original Banner.jpg)
+- Navy (primary/trust) + Orange (accent/CTA); theme tokens in `src/styles/global.css` via `@theme`
+- Logo `public/logo.svg` (potrace-traced from the original Banner.jpg)
 
-## SEO Strategy
+## SEO strategy
 
-- 18 pages total: 5 core + 4 service landing + 4 regional + 2 guides + FAQ + 404
-- JSON-LD: Organization, BreadcrumbList, Service, FAQPage, Article schemas
-- Entity stitching via `@id` URIs (e.g., `https://hanustransport.cz/#organization`)
-- E-waste collection (svoz elektrospotřebičů) is the **unique differentiator** — no competitors have this
-
-## Content Rules
-
-- Only verified facts from: original site, ARES registry, owner-confirmed info
-- Never invent statistics, capabilities, or claims
-- Never deploy without local verify + owner permission
+- Dynamic per-slug routes from collections: `sluzby/` (services), `autodoprava/` (regional), `pruvodce/` (guides). `vozovy-park` is a single static page rendering the `vehicles` collection. Core static pages: index, o-nas, kontakt, cenik; plus FAQ (`casto-kladene-dotazy`) and 404
+- JSON-LD: Organization, BreadcrumbList, Service, FAQPage, Article; entities stitched via `@id` URIs (e.g. `https://hanustransport.cz/#organization`)
+- E-waste collection (svoz elektrospotřebičů) is the unique differentiator — no competitor offers it
